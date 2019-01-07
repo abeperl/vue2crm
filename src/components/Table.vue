@@ -2,8 +2,6 @@
   <div>
   <v-data-table 
     class="elevation-1" 
-    @clickrow="clickRow(props.item)"
-    @click="clickRow(props.item)"
     v-bind:headers="headers" 
     v-bind:items="items" 
     v-bind:search="search" 
@@ -19,8 +17,7 @@
             </th>
           </tr>
     </template>
-    <template class="body-2" slot="items" slot-scope="props" 
-      color="success">
+    <template class="body-2" slot="items" slot-scope="props">
       <td v-for="(header, index) in headers" :key="index" 
           :class="[ index === 0? 'text-xs-left': 'text-xs-center', 'body-2']" 
           @click="clickRow(props.item)"
